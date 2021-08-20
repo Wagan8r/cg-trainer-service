@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-postgres:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
         environment:
           DB_PORT: 5432
       - image: circleci/postgres:12.1
