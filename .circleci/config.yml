@@ -23,6 +23,7 @@ commands:
 
 jobs:
   test-node-postgres:
+    executor: node-postgres
     steps:
       - init-node
       - test-node
