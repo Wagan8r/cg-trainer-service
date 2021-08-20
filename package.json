@@ -57,6 +57,8 @@
   },
   "scripts": {
     "build": "nest build",
+    "docker:build": "docker build -t cg-trainer-service .",
+    "docker": "docker-compose up -d && docker-compose logs -f",
     "lint": "eslint 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "npm run lint -- --fix",
     "prebuild": "rimraf dist",
