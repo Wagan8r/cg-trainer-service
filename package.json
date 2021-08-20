@@ -3,16 +3,6 @@
   "version": "0.0.0-dev",
   "description": "A demo service for cg",
   "main": "src/main.ts",
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "nest build",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/src/main",
-    "tsc": "tsc",
-    "test": "jest --logHeapUsage --coverage"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wagan8r/cg-trainer-service.git"
@@ -64,5 +54,15 @@
     "ts-node": "^10.2.1",
     "tsconfig-paths": "^3.10.1",
     "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/src/main",
+    "tsc": "tsc",
+    "test": "tsc && jest --logHeapUsage --coverage"
   }
 }
