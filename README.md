@@ -14,3 +14,17 @@ Once the image is built, you can start the app with:
 npm run docker
 ```
 Which will start both the application and the Postgres DB
+
+## Dev setup
+Install mode modules
+```
+npm i
+```
+Run db migrations
+```
+npm run migration:run
+```
+Start the app
+```
+npm run start
+```

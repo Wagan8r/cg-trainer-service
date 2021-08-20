@@ -13,8 +13,12 @@ export class ApiUtils {
         return request(this.app.getHttpServer()).post(url).send(payload);
     }
 
+    public getTrainerRaw(id: string): request.Test {
+        return this.get(`/v1/trainers/${id}`);
+    }
+
     public async getTrainer(id: string): Promise<Trainer> {
-        const response = await this.get(`/v1/trainers/${id}`);
+        const response = await this.getTrainerRaw(id);
         return <Trainer>response.body;
     }
 
