@@ -16,10 +16,22 @@ commands:
   init-node:
     steps:
       - checkout
+      - restore-node-cache
       - run: npm i
+      - save-node-cache
   test-node:
     steps:
       - run: npm run test
+  save-node-cache:
+    steps:
+      - save_cache:
+          key: v1-{{ .Environment.CIRCLE_PROJECT_REPONAME }}-{{ arch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+  restore-node-cache:
+    steps:
+      - restore_cache:
+          key: v1-{{ .Environment.CIRCLE_PROJECT_REPONAME }}-{{ arch }}-{{ checksum "package.json" }}
 
 jobs:
   test-node-postgres:
