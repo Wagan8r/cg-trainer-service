@@ -7,8 +7,9 @@ export class AddTrainers1629430585882 implements MigrationInterface {
             {
                 name: 'id',
                 type: 'uuid',
-                isNullable: false,
                 isPrimary: true,
+                isGenerated: true,
+                generationStrategy: 'uuid',
             },
             {
                 name: 'email',

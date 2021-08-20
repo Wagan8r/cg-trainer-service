@@ -69,10 +69,13 @@
     "start:prod": "node dist/src/main",
     "tsc": "tsc",
     "test": "npm run lint && tsc -p tsconfig.json && jest --logHeapUsage --coverage",
+    "test:ci": "npm run migration:run && npm run test",
     "test:migration": "jest --config jest.config.migration.js",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config src/cli/type-orm-config.ts",
+    "typeorm:prod": "./node_modules/typeorm/cli.js --config dist/src/cli/type-orm-config.js",
     "migration:create": "npm run typeorm migration:create -- -n",
     "migration:run": "npm run typeorm migration:run -- -t=false",
+    "migration:run:prod": "npm run typeorm:prod migration:run -- -t=false",
     "migration:revert": "npm run typeorm migration:revert -- -t=false"
   }
 }

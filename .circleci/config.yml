@@ -21,7 +21,7 @@ commands:
       - save-node-cache
   test-node:
     steps:
-      - run: npm run test
+      - run: npm run test:ci
   test-node-migration:
     steps:
       - run: npm run test:migration

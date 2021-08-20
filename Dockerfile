@@ -26,4 +26,4 @@ COPY --from=npm-build /usr/src/build/tsconfig.build.json    tsconfig.build.json
 
 EXPOSE 8080
 
-CMD npm run start:prod
+CMD npm run migration:run:prod && npm run start:prod
