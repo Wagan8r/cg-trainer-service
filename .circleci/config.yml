@@ -6,7 +6,7 @@ executors:
       - image: circleci/node:14
         environment:
           DB_PORT: 5432
-      - image: circleci/postgres:12.1
+      - image: circleci/postgres:13.4
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
