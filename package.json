@@ -56,13 +56,15 @@
     "uuid": "8.3.2"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "nest build",
+    "lint": "eslint 'src/**/*.ts' 'test/**/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "prebuild": "rimraf dist",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/src/main",
     "tsc": "tsc",
-    "test": "tsc && jest --logHeapUsage --coverage"
+    "test": "npm run lint && tsc -p tsconfig.json && jest --logHeapUsage --coverage"
   }
 }
