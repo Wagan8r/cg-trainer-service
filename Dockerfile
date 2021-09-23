@@ -1,5 +1,5 @@
 # create intermediate image
-FROM node:14.17-alpine AS npm-build
+FROM node:16.10-alpine AS npm-build
 
 WORKDIR /usr/src/build
 
@@ -14,7 +14,7 @@ RUN npm run build
 RUN npm uninstall @nestjs/cli --no-save
 
 # second step, only copy exactly what we need
-FROM node:14.17-alpine
+FROM node:16.10-alpine
 
 WORKDIR /usr/src/app
 
